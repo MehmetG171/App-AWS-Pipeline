@@ -2,8 +2,8 @@
 
 ![1_Mgs29N9bLM946VauWzfLvQ](https://github.com/user-attachments/assets/7323a3d4-65d6-4a6e-aa6c-af4912e082ec)
 
-### Table of Contents
 
+### Table of Contents
 1. [DevOps]
 2. [Introduction](#introduction)
 3. [Prerequisites](#prerequisites)
@@ -19,9 +19,10 @@
 13. [Known Risks](#known-risks)
 14. [Final Testing and Push/Merge to Production](#final-testing-and-pushmerge-to-production)
 15. [Conclusion](#conclusion)
-    
+
 ---
 
+  
 ### Description
 I was able to develop a CI/CD pipeline for a containerized Python application using GitHub Actions, Docker, AWS ECR, Kubernetes (EKS), and Terraform. The pipeline handled automatic builds, tests, security scans, and deployments to AWS EKS based on branch triggers (dev for staging, main for production) with `\healthcheck` endpoint that shows the last_commit_sha.
 
@@ -86,7 +87,7 @@ Before beginning, ensure you have:
 │   └── main.py
 ├── tests/
 │   └── test_app.py
-├── gab-app-local.sh
+├── mng-app-local.sh
 └── README.md
 ```
 
@@ -112,14 +113,14 @@ The CI/CD pipeline executes the following steps:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/ougabriel/gab-test-mod.git
-cd gab-test-mod
+git clone https://github.com/oumngriel/mng-test-mod.git
+cd mng-test-mod
 ```
 
 ### 2. Local Build and Testing
 Run the provided script to build and test the application locally:
 ```bash
-./gab-app-local.sh
+./mng-app-local.sh
 ```
 ![image](https://github.com/user-attachments/assets/14c7bb87-1bd4-44c9-9af1-d819d0229ea4)
 
@@ -172,3 +173,5 @@ git push origin dev
 - Use of Terraform for infrastructure provisioning.
 - Dockerized Python application with healthcheck endpoint.
 - Comprehensive security checks for code and Docker images.
+
+---
