@@ -28,10 +28,10 @@ DEPLOYMENT_FILE="./kubernetes/deployment.yaml"
 
 # Determine the environment based on the branch
 if [[ "$GITHUB_REF" == "refs/heads/main" ]]; then
-    ECR_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/mngapprepoprod:latest"
+    ECR_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/mngapprepodefault:latest"
     echo "Deploying to production environment..."
 else
-    ECR_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/mngapprepodev:latest"
+    ECR_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/mngapprepodefault:latest"
     echo "Deploying to development environment..."
 fi
 
