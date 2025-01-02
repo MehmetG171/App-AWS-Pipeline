@@ -2,7 +2,6 @@
 import unittest
 from app import app
 
-
 class FlaskAppTests(unittest.TestCase):
 
     def setUp(self):
@@ -24,7 +23,6 @@ class FlaskAppTests(unittest.TestCase):
         self.assertEqual(json_data['description'], "Mehmet's application.")
         self.assertEqual(json_data['version'], "1.0")
         self.assertIsInstance(json_data['last_commit_sha'], str)  # it's a string
-
 
 if __name__ == '__main__':
     unittest.main()
