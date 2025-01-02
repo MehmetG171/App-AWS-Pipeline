@@ -2,8 +2,8 @@
 
 ![1_Mgs29N9bLM946VauWzfLvQ](https://github.com/user-attachments/assets/7323a3d4-65d6-4a6e-aa6c-af4912e082ec)
 
-
 ### Table of Contents
+
 1. [DevOps]
 2. [Introduction](#introduction)
 3. [Prerequisites](#prerequisites)
@@ -19,12 +19,9 @@
 13. [Known Risks](#known-risks)
 14. [Final Testing and Push/Merge to Production](#final-testing-and-pushmerge-to-production)
 15. [Conclusion](#conclusion)
-16. [Demonstration](#demonstration)
-17. [Contact](#contact)
-
+    
 ---
 
-  
 ### Description
 I was able to develop a CI/CD pipeline for a containerized Python application using GitHub Actions, Docker, AWS ECR, Kubernetes (EKS), and Terraform. The pipeline handled automatic builds, tests, security scans, and deployments to AWS EKS based on branch triggers (dev for staging, main for production) with `\healthcheck` endpoint that shows the last_commit_sha.
 
@@ -175,18 +172,3 @@ git push origin dev
 - Use of Terraform for infrastructure provisioning.
 - Dockerized Python application with healthcheck endpoint.
 - Comprehensive security checks for code and Docker images.
-
----
-
-## Demonstration
-
-For a live demonstration of the project, you can view the deployment in action at [[CHECK THE BLOG HERE](https://ougabriel.medium.com/ci-cd-pipeline-deploy-python-app-with-healthcheck-on-aws-eks-using-terraform-github-actions-cb9db07d93a1)].
-
----
-
-## Contact
-
-For questions or further discussions, feel free to reach out to me or connect with me on [[LinkedIn Profile](https://linkedin.com/in/gabrielokom/)].
-
----
-
