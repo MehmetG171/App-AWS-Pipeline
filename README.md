@@ -2,7 +2,6 @@
 
 ![1_Mgs29N9bLM946VauWzfLvQ](https://github.com/user-attachments/assets/7323a3d4-65d6-4a6e-aa6c-af4912e082ec)
 
-
 ### Table of Contents
 1. [DevOps]
 2. [Introduction](#introduction)
@@ -22,20 +21,22 @@
 
 ---
 
-  
 ### Description
+
 I was able to develop a CI/CD pipeline for a containerized Python application using GitHub Actions, Docker, AWS ECR, Kubernetes (EKS), and Terraform. The pipeline handled automatic builds, tests, security scans, and deployments to AWS EKS based on branch triggers (dev for staging, main for production) with `\healthcheck` endpoint that shows the last_commit_sha.
 
 ### Requirements
+
 - Create a CI/CD pipeline that performs the following steps:
-  - Build and test a containerized Python application.
-  - Push Docker images to AWS Elastic Container Registry (ECR).
-  - Deploy the application to a Kubernetes cluster in AWS EKS using Terraform.
-  - Perform security scans using tools like Bandit, Safety, and Trivy.
-  - Deploy automatically upon commits to the dev or main branch in GitHub.
-  - Implement a `/healthcheck` endpoint that returns application version, description, and the last commit SHA in JSON format.
+- Build and test a containerized Python application.
+- Push Docker images to AWS Elastic Container Registry (ECR).
+- Deploy the application to a Kubernetes cluster in AWS EKS using Terraform.
+- Perform security scans using tools like Bandit, Safety, and Trivy.
+- Deploy automatically upon commits to the dev or main branch in GitHub.
+- Implement a `/healthcheck` endpoint that returns application version, description, and the last commit SHA in JSON format.
 
 ### Acceptance Criteria
+
 - A functional GitHub Actions pipeline that builds, tests, and deploys based on branch (dev or main).
 - Successful deployment of the Dockerized application to AWS EKS.
 - Security scans are implemented, and reports are available for review.
@@ -112,28 +113,36 @@ The CI/CD pipeline executes the following steps:
 ## Steps to Reproduce the Project
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/oumngriel/mng-test-mod.git
 cd mng-test-mod
 ```
 
 ### 2. Local Build and Testing
+
 Run the provided script to build and test the application locally:
+
 ```bash
 ./mng-app-local.sh
 ```
-![image](https://github.com/user-attachments/assets/14c7bb87-1bd4-44c9-9af1-d819d0229ea4)
+
+![image](pics/App.png)
 
 Test the healthcheck endpoint:
+
 ```bash
 curl http://localhost:3000/healthcheck
 ```
-![image](https://github.com/user-attachments/assets/a5852d26-8462-47fd-a750-aa7f38166b8a)
+
+![image](pics/Healthcheck-Status.png)
 
 
 ### 3. CI/CD Pipeline Implementation
+
 - **Login to AWS**: Set up AWS credentials.
 - **Use Terraform**: Initialize and create workspaces.
+
 ```bash
 cd terraform
 terraform init
@@ -142,13 +151,17 @@ terraform workspace new prod
 terraform workspace select dev
 terraform apply
 ```
+
 - **GitHub Actions Workflow**: Create the `.github/workflows/cicdpipeline.yml` file with the pipeline configuration.
 
 ### 4. Create Secrets in GitHub
+
 Add necessary secrets for AWS account and ECR repository names in your GitHub repository settings.
 
 ### 5. Pushing Changes to Dev Branch
+
 Make changes and push to the `dev` branch to trigger the pipeline:
+
 ```bash
 git checkout -b dev
 git add .
@@ -173,5 +186,3 @@ git push origin dev
 - Use of Terraform for infrastructure provisioning.
 - Dockerized Python application with healthcheck endpoint.
 - Comprehensive security checks for code and Docker images.
-
----
