@@ -128,9 +128,9 @@ jobs:
       - name: Update Kubeconfig for EKS Cluster
         run: |
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            CLUSTER_NAME=eks-cluster-prod
+            CLUSTER_NAME=eks-cluster-default
           else
-            CLUSTER_NAME=eks-cluster-dev
+            CLUSTER_NAME=eks-cluster-default
           fi
           aws eks update-kubeconfig --name $CLUSTER_NAME --region ${{ secrets.AWS_REGION }}
 
