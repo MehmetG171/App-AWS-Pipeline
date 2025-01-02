@@ -3,23 +3,21 @@
 ![1_Mgs29N9bLM946VauWzfLvQ](https://github.com/user-attachments/assets/7323a3d4-65d6-4a6e-aa6c-af4912e082ec)
 
 ### Table of Contents
-1. [DevOps]
-2. [Introduction](#introduction)
-3. [Prerequisites](#prerequisites)
-4. [Key Technologies & Tools](#key-technologies--tools)
-5. [Pipeline Workflow Overview](#pipeline-workflow-overview)
-6. [Repository Structure](#repository-structure)
-7. [Setup and Configuration](#setup-and-configuration)
-8. [Local Build and Testing](#local-build-and-testing)
-9. [CI/CD Pipeline Implementation](#ci-cd-pipeline-implementation)
-10. [Kubernetes Configuration](#kubernetes-configuration)
-11. [Security Checks](#security-checks)
-12. [Branching Strategy](#branching-strategy)
-13. [Known Risks](#known-risks)
-14. [Final Testing and Push/Merge to Production](#final-testing-and-pushmerge-to-production)
-15. [Conclusion](#conclusion)
 
----
+1. [Introduction](#introduction)  
+2. [Prerequisites](#prerequisites)  
+3. [Key Technologies & Tools](#key-technologies--tools)  
+4. [Pipeline Workflow Overview](#pipeline-workflow-overview)  
+5. [Repository Structure](#repository-structure)  
+6. [Setup and Configuration](#setup-and-configuration)  
+7. [Local Build and Testing](#local-build-and-testing)  
+8. [CI/CD Pipeline Implementation](#ci-cd-pipeline-implementation)  
+9. [Kubernetes Configuration](#kubernetes-configuration)  
+10. [Security Checks](#security-checks)  
+11. [Branching Strategy](#branching-strategy)  
+12. [Known Risks](#known-risks)  
+13. [Final Testing and Push/Merge to Production](#final-testing-and-pushmerge-to-production)  
+14. [Conclusion](#conclusion)
 
 ### Description
 
@@ -43,13 +41,9 @@ I was able to develop a CI/CD pipeline for a containerized Python application us
 - `/healthcheck` endpoint responds with accurate JSON data.
 - Documentation is complete.
 
----
-
 ## Introduction
 
 This guide walks you through how i was able to up a CI/CD pipeline for a containerized Python application. Using Docker, Terraform, GitHub Actions, Kubernetes, and AWS ECR, you will build, test, and deploy the application in an automated workflow. The goal is to enable automatic deployment on each new code commit.
-
----
 
 ## Prerequisites
 
@@ -61,8 +55,6 @@ Before beginning, ensure you have:
 5. Terraform for provisioning infrastructure.
 6. VS Code or any text editor of choice.
 
----
-
 ## Key Technologies & Tools
 
 - **Docker**: For containerizing the Python application.
@@ -71,8 +63,6 @@ Before beginning, ensure you have:
 - **Terraform**: For provisioning EKS and related resources.
 - **GitHub Actions**: For CI/CD, including building, testing, security scanning, and deployment.
 - **Security Tools**: Trivy, Bandit, and Safety for scanning code and Docker images for vulnerabilities.
-
----
 
 ## Repository Structure
 
@@ -92,8 +82,6 @@ Before beginning, ensure you have:
 └── README.md
 ```
 
----
-
 ## CI/CD Pipeline Overview
 
 The CI/CD pipeline executes the following steps:
@@ -107,8 +95,6 @@ The CI/CD pipeline executes the following steps:
 8. Update Kubernetes Config
 9. Deploy to Kubernetes
 10. Health Check
-
----
 
 ## Steps to Reproduce the Project
 
@@ -169,16 +155,12 @@ git commit -m "Initial commit"
 git push origin dev
 ```
 
----
-
 ## Key Pipeline Stages
 
 1. **Build and Test**: Runs unit tests and linting.
 2. **Security Scans**: Uses Bandit, Safety, and Trivy.
 3. **Docker Image Creation**: Builds and pushes the image to ECR.
 4. **Deployment**: Deploys to EKS and verifies health.
-
----
 
 ## Project Highlights
 
