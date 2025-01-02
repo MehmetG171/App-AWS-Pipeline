@@ -14,7 +14,7 @@ app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default_secret_key')
 
 
 APP_VERSION = "1.0"
-APP_DESCRIPTION = "Mehmet's pre-interview technical test."
+APP_DESCRIPTION = "Mehmet's application."
 
 
 def get_last_commit_sha():
