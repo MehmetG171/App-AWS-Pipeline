@@ -1,6 +1,6 @@
 # CI/CD Project: Deploy a Python App with /healthcheck Endpoint on Docker, ECR, Kubernetes, Terraform, and GitHub Actions
 
-![1_Mgs29N9bLM946VauWzfLvQ](https://github.com/user-attachments/assets/7323a3d4-65d6-4a6e-aa6c-af4912e082ec)
+![image](pics/Overview.jpg)
 
 ### Table of Contents
 
